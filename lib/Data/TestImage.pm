@@ -32,5 +32,32 @@ use constant USC_SIPI_IMAGE_DB_VOLUME => {
 		},
 };
 
+sub usc_sipi_installed_volumes {
+	...
+}
+
+sub usc_sipi_install_volume {
+	...
+}
+
+sub usc_sipi_get_intalled_images {
+	...
+}
+
+sub usc_sipi_get_all_images {
+	...
+}
+
+
+sub usc_sipi_get_image {
+	...
+}
+
+sub usc_sipi_get_image_by_synonym {
+	...
+}
+
+
+
 
 1;
