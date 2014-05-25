@@ -7,14 +7,26 @@ use File::ShareDir 'dist_dir';
 use Path::Class;
 use Module::Load;
 
+=method get_dist_dir
+
+    get_dist_dir()
+
+Returns a L<Path::Class::Dir> object to the shared directory for the
+C<Data-TestImage> distribution.
+
+=cut
 sub get_dist_dir {
 	dir(dist_dir('Data-TestImage'));
 }
 
-sub install_package {
-	...
-}
+=method get_image
 
+    get_image( $image_name )
+
+Calls L<Data::TestImage::DB/get_image> on L<Data::TestImage::DB::Other> and
+L<Data::TestImage::DB::USC::SIPI>. Returns an instance of L<Path::Class::File>.
+
+=cut
 sub get_image {
 	my ($self, $image) = @_;
 	for my $db (qw(Data::TestImage::DB::Other Data::TestImage::DB::USC::SIPI)) {
