@@ -17,7 +17,7 @@ sub install_package {
 
 sub get_image {
 	my ($self, $image) = @_;
-	for my $db (qw(Data::TestImage::Other Data::TestImage::USC::SIPI)) {
+	for my $db (qw(Data::TestImage::DB::Other Data::TestImage::DB::USC::SIPI)) {
 		load $db;
 		my $image_file = $db->get_image($image);
 		return $image_file if $image_file;
