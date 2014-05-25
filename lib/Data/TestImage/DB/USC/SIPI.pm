@@ -16,7 +16,7 @@ use constant ARCHIVE_TYPE => 'tgz';
 # Text is from the catalog <http://sipi.usc.edu/database/SIPI_Database.pdf>.
 =method IMAGE_DB_VOLUME
 
-    IMAGE_DB_VOLUME
+    IMAGE_DB_VOLUME()
 
 Returns a hash containing information about each of the volumes in the image database.
 
@@ -145,9 +145,9 @@ sub get_all_images {
 
     get_metadata()
 
-Returns metadata about all images in the database (even those not installed).
-This data includes the size, a textual description, and whether the image is
-24 bpp color or 8 bpp monochrome.
+Returns a hashref of metadata about all images in the database (even those not
+installed).  This data includes the size, a textual description, and whether
+the image is 24 bpp color or 8 bpp monochrome.
 
 =cut
 sub get_metadata {
@@ -187,7 +187,9 @@ sub get_image {
     use Data::TestImage::DB::USC::SIPI;
 
     # two different ways of referring to the same image
-    my @mandrill_images = map { Data::TestImage::DB::USC::SIPI->get_image($_) } qw(4.2.03 mandrill);
+    my @mandrill_images = map {
+        Data::TestImage::DB::USC::SIPI->get_image($_)
+    } qw(4.2.03 mandrill);
     say join " & ", map { $_->basename } @mandrill_images;
     # 4.2.03.tiff & 4.2.03.tiff
 

@@ -12,7 +12,7 @@ use Path::Class;
 
 Returns the top-level directory of this image database. This method must be
 implemented by children of this class in order to use the default
-implementations of L</get_installed_images>.
+implementation of L</get_installed_images>.
 
 =cut 
 sub get_db_dir {

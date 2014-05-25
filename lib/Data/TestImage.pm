@@ -37,3 +37,11 @@ sub get_image {
 }
 
 1;
+=head1 SYNOPSIS
+
+    use Data::TestImage;
+
+    say Data::TestImage->get_image('mandrill')->basename;
+    # 4.2.03.tiff
+
+=cut
