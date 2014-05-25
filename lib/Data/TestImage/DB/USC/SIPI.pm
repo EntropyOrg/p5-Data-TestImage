@@ -113,7 +113,7 @@ sub install_package {
 			try {
 				$response = HTTP::Tiny->new->get($url);
 				die "Failed to download $volume @ $url\n" unless $response->{success};
-				last;
+				last URL;
 			} catch {
 				next URL;
 			};
