@@ -21,7 +21,11 @@ sub get_db_dir {
     say $camera_file->basename;
     # cameraman.tiff
 
+Produces the L<cameraman.tiff|http://zmughal.github.io/p5-Data-TestImage/Other/cameraman.png> image.
+
 =for html <div><img width="200" alt="Cameraman image" src="http://zmughal.github.io/p5-Data-TestImage/Other/cameraman.png"/></div>
+
+=cut
 
 =head1 INHERITANCE
 

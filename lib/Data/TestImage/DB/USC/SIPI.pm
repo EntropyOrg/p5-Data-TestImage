@@ -193,7 +193,11 @@ sub get_image {
     say join " & ", map { $_->basename } @mandrill_images;
     # 4.2.03.tiff & 4.2.03.tiff
 
+Produces the L<mandrill|http://zmughal.github.io/p5-Data-TestImage/USC/SIPI/mandrill.png> image.
+
 =for html <div><img width="200" alt="Mandrill image" src="http://zmughal.github.io/p5-Data-TestImage/USC/SIPI/mandrill.png"/></div>
+
+=cut
 
 =head1 INHERITANCE
 
