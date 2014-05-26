@@ -193,6 +193,8 @@ sub get_image {
     say join " & ", map { $_->basename } @mandrill_images;
     # 4.2.03.tiff & 4.2.03.tiff
 
+=for html <div><img width="200" alt="Mandrill image" src="http://zmughal.github.io/p5-Data-TestImage/USC/SIPI/mandrill.png"/></div>
+
 =head1 INHERITANCE
 
 =over 4

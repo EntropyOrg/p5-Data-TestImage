@@ -21,6 +21,8 @@ sub get_db_dir {
     say $camera_file->basename;
     # cameraman.tiff
 
+=for html <div><img width="200" alt="Cameraman image" src="http://zmughal.github.io/p5-Data-TestImage/Other/cameraman.png"/></div>
+
 =head1 INHERITANCE
 
 =over 4
