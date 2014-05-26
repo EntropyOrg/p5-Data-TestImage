@@ -24,6 +24,7 @@ Returns a hash containing information about each of the volumes in the image dat
 use constant IMAGE_DB_VOLUME => {
 	textures => {
 			volume => 1,
+			dir => 'textures',
 			description => 'Brodatz textures, texture mosaics, etc.',
 			description_longer =>
 q{For the Brodatz texture images, the number in parenthesis (i.e. D12) is the
@@ -42,18 +43,21 @@ web site <http://sipi.usc.edu/database/USCTextureMosaics.pdf>.},
 		},
 	aerials => {
 			volume => 2,
+			dir => 'aerials',
 			description => 'High altitude aerial images',
 			url => 'http://sipi.usc.edu/database/aerials.tar.gz',
 			alt_urls => [ 'https://github.com/zmughal/usc-sipi-image-database-backup/blob/master/aerials.tar.gz?raw=true' ],
 		},
 	miscellaneous => {
 			volume => 3,
+			dir => 'misc',
 			description => 'Lena, the mandrill, and other favorites',
 			url => 'http://sipi.usc.edu/database/misc.tar.gz',
 			alt_urls => [ 'https://github.com/zmughal/usc-sipi-image-database-backup/blob/master/misc.tar.gz?raw=true' ],
 		},
 	sequences => {
 			volume => 4,
+			dir => 'sequences',
 			description => 'Moving head, fly-overs, moving vehicles',
 			description_longer =>
 q{Each of the sequences consist of multiple images showing motion of the subject matter. The image filenames
@@ -74,7 +78,7 @@ sub get_db_dir {
 sub _get_volume_dir {
 	my ($self, $volume) = @_;
 	$self->_valid_volume( $volume );
-	$self->get_db_dir->subdir($volume);
+	$self->get_db_dir->subdir( IMAGE_DB_VOLUME()->{$volume}{dir} );
 }
 
 =method installed_volumes
@@ -99,7 +103,12 @@ sub install_package {
 	require HTTP::Tiny;
 	require Archive::Extract;
 	require File::Temp;
+	no warnings 'exiting'; # for the next/last URL
 	my @volumes = split ',', $args;
+
+	# if :all is the name used, then just download all known volumes
+	@volumes = keys IMAGE_DB_VOLUME() if grep { ":all" } @volumes;
+
 	for my $volume (@volumes) {
 		$self->_valid_volume( $volume );
 
@@ -113,20 +122,24 @@ sub install_package {
 			try {
 				$response = HTTP::Tiny->new->get($url);
 				die "Failed to download $volume @ $url\n" unless $response->{success};
-				last URL;
+
+				# save the response to temp file
+				my $temp_fh = File::Temp->new;
+				file($temp_fh->filename)->spew(
+					$response->{content} );
+
+				# extract to appropriate directory
+				print "Extracting $volume...\n" if $opts{verbose};
+				my $ae = Archive::Extract->new(
+					archive => $temp_fh->filename,
+					type => ARCHIVE_TYPE );
+				$ae->extract( to => $self->get_db_dir );
+
+				last URL; # done with this URL
 			} catch {
-				next URL;
+				next URL; # something went wrong...try alternatives
 			};
 		}
-
-		# save the response to temp file
-		my $temp_fh = File::Temp->new;
-		file($temp_fh->filename)->spew( $response->{content} );
-
-		# extract to appropriate directory
-		print "Extracting $volume...\n" if $opts{verbose};
-		my $ae = Archive::Extract->new( archive => $temp_fh->filename, type => ARCHIVE_TYPE );
-		$ae->extract( to => $self->get_db_dir );
 	}
 }
 
@@ -220,6 +233,23 @@ information, see the database website.
 
 The textual descriptions returned by L</IMAGE_DB_VOLUME> and L</get_metadata>
 are taken from the database catalog.
+
+=head1 INSTALLATION
+
+As discussed in L<Data::TestImage|Data::TestImage/INSTALLATION>, installing
+further volumes can be done by setting the C<PERL_DATA_TESTIMAGE_INSTALL>
+environment variable. The syntax for installing each volume is
+
+    USC::SIPI=<volume>,<volume>,<volume>,...
+
+where C<<volume>> is one of the volume names as listed in L</DESCRIPTION>.
+
+A shortcut for installing all volumes in the database is to use C<:all> as the
+volume name, that is, set the environment variable to
+
+    USC::SIPI=:all
+
+and then install the distribution.
 
 =head1 SEE ALSO
 

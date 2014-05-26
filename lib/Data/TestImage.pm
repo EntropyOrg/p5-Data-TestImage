@@ -49,3 +49,18 @@ Produces the L<mandrill|http://zmughal.github.io/p5-Data-TestImage/USC/SIPI/mand
 =for html <div><img width="200" alt="Mandrill image" src="http://zmughal.github.io/p5-Data-TestImage/USC/SIPI/mandrill.png"/></div>
 
 =cut
+
+=head1 INSTALLATION
+
+Some of the image databases can be configured to install more images at
+configuration time. This can be accomplished by setting the
+C<PERL_DATA_TESTIMAGE_INSTALL> environment variable prior to installation, for
+example
+
+    export PERL_DATA_TESTIMAGE_INSTALL="USC::SIPI=miscellaneous,sequences"
+    cpanm Data::TestImage
+
+See the database documentation for more information. Multiple databases can be
+configured by putting a space between each sequence.
+
+=cut
