@@ -107,7 +107,7 @@ sub install_package {
 	my @volumes = split ',', $args;
 
 	# if :all is the name used, then just download all known volumes
-	@volumes = keys IMAGE_DB_VOLUME() if grep { ":all" } @volumes;
+	@volumes = keys IMAGE_DB_VOLUME() if grep { $_ eq ":all" } @volumes;
 
 	for my $volume (@volumes) {
 		$self->_valid_volume( $volume );
