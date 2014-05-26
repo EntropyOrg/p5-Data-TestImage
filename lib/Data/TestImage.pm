@@ -44,4 +44,6 @@ sub get_image {
     say Data::TestImage->get_image('mandrill')->basename;
     # 4.2.03.tiff
 
+=for html <div><img width="200" alt="Mandrill image" src="http://zmughal.github.io/p5-Data-TestImage/USC/SIPI/mandrill.png"/></div>
+
 =cut
