@@ -37,6 +37,19 @@ C<Data-TestImage> distribution.
 Calls L<Data::TestImage::DB/get_image> on L<Data::TestImage::DB::Other> and
 L<Data::TestImage::DB::USC::SIPI>. Returns an instance of L<Path::Class::File>.
 
+=head1 INSTALLATION
+
+Some of the image databases can be configured to install more images at
+configuration time. This can be accomplished by setting the
+C<PERL_DATA_TESTIMAGE_INSTALL> environment variable prior to installation, for
+example
+
+    export PERL_DATA_TESTIMAGE_INSTALL="USC::SIPI=miscellaneous,sequences"
+    cpanm Data::TestImage
+
+See the database documentation for more information. Multiple databases can be
+configured by putting a space between each sequence.
+
 =head1 AUTHOR
 
 Zakariyya Mughal <zmughal@cpan.org>
