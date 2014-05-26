@@ -8,7 +8,7 @@ Data::TestImage - interface for retrieving test images
 
 =head1 VERSION
 
-version 0.003
+version 0.004
 
 =head1 SYNOPSIS
 
@@ -32,6 +32,8 @@ C<Data-TestImage> distribution.
 
 Calls L<Data::TestImage::DB/get_image> on L<Data::TestImage::DB::Other> and
 L<Data::TestImage::DB::USC::SIPI>. Returns an instance of L<Path::Class::File>.
+
+=for html <div><img width="200" alt="Mandrill image" src="http://zmughal.github.io/p5-Data-TestImage/USC/SIPI/mandrill.png"/></div>
 
 =head1 AUTHOR
 
