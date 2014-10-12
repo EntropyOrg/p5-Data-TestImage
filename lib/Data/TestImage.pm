@@ -50,6 +50,13 @@ Produces the L<mandrill|http://zmughal.github.io/p5-Data-TestImage/USC/SIPI/mand
 
 =cut
 
+=head1 DESCRIPTION
+
+This module provides access to test images from several databases of
+L<standard test images|https://en.wikipedia.org/wiki/Standard_test_image>.
+
+=cut
+
 =head1 INSTALLATION
 
 Some of the image databases can be configured to install more images at
