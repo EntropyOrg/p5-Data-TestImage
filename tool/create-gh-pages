@@ -4,7 +4,7 @@ CURDIR=`dirname "$0"`
 TOP="$CURDIR/.."
 LIB="$TOP/lib"
 WORK="$CURDIR/gh-pages"
-GIT_REMOTE="git@github.com:zmughal/p5-Data-TestImage"
+GIT_REMOTE="git@github.com:EntropyOrg/p5-Data-TestImage"
 GH_PAGES_BRANCH="gh-pages"
 
 # all git commands will use this

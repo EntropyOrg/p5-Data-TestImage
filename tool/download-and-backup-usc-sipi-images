@@ -7,7 +7,7 @@ CURDIR=`dirname "$0"`
 TOP="$CURDIR/.."
 LIB="$TOP/lib"
 WORK="$CURDIR/work"
-GIT_REMOTE="git@github.com:zmughal/usc-sipi-image-database-backup.git"
+GIT_REMOTE="git@github.com:EntropyOrg-data/usc-sipi-image-database-backup.git"
 
 # all git commands will use this
 export GIT_WORK_TREE="$WORK"
