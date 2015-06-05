@@ -1,6 +1,6 @@
 package Data::TestImage;
 # ABSTRACT: interface for retrieving test images
-$Data::TestImage::VERSION = '0.006';
+$Data::TestImage::VERSION = '0.007';
 use strict;
 use warnings;
 use File::ShareDir 'dist_dir';
@@ -34,7 +34,7 @@ Data::TestImage - interface for retrieving test images
 
 =head1 VERSION
 
-version 0.006
+version 0.007
 
 =head1 SYNOPSIS
 
@@ -43,9 +43,14 @@ version 0.006
     say Data::TestImage->get_image('mandrill')->basename;
     # 4.2.03.tiff
 
-Produces the L<mandrill|http://zmughal.github.io/p5-Data-TestImage/USC/SIPI/mandrill.png> image.
+Produces the L<mandrill|http://EntropyOrg.github.io/p5-Data-TestImage/USC/SIPI/mandrill.png> image.
 
-=for html <div><img width="200" alt="Mandrill image" src="http://zmughal.github.io/p5-Data-TestImage/USC/SIPI/mandrill.png"/></div>
+=for html <div><img width="200" alt="Mandrill image" src="http://EntropyOrg.github.io/p5-Data-TestImage/USC/SIPI/mandrill.png"/></div>
+
+=head1 DESCRIPTION
+
+This module provides access to test images from several databases of
+L<standard test images|https://en.wikipedia.org/wiki/Standard_test_image>.
 
 =head1 METHODS
 

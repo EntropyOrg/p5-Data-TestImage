@@ -1,6 +1,6 @@
 package Data::TestImage::DB::USC::SIPI;
 # ABSTRACT: provides access to the USC SIPI test image database
-$Data::TestImage::DB::USC::SIPI::VERSION = '0.006';
+$Data::TestImage::DB::USC::SIPI::VERSION = '0.007';
 use strict;
 use warnings;
 use Data::TestImage;
@@ -32,21 +32,21 @@ gray levels which indicate which of the eight textures are present at each point
 mosaic. A document containing a more detailed description of the texture mosaics is available on the SIPI
 web site <http://sipi.usc.edu/database/USCTextureMosaics.pdf>.},
 			url => 'http://sipi.usc.edu/database/textures.tar.gz',
-			alt_urls => [ 'https://github.com/zmughal/usc-sipi-image-database-backup/blob/master/textures.tar.gz?raw=true' ],
+			alt_urls => [ 'https://github.com/EntropyOrg-data/usc-sipi-image-database-backup/blob/master/textures.tar.gz?raw=true' ],
 		},
 	aerials => {
 			volume => 2,
 			dir => 'aerials',
 			description => 'High altitude aerial images',
 			url => 'http://sipi.usc.edu/database/aerials.tar.gz',
-			alt_urls => [ 'https://github.com/zmughal/usc-sipi-image-database-backup/blob/master/aerials.tar.gz?raw=true' ],
+			alt_urls => [ 'https://github.com/EntropyOrg-data/usc-sipi-image-database-backup/blob/master/aerials.tar.gz?raw=true' ],
 		},
 	miscellaneous => {
 			volume => 3,
 			dir => 'misc',
 			description => 'Lena, the mandrill, and other favorites',
 			url => 'http://sipi.usc.edu/database/misc.tar.gz',
-			alt_urls => [ 'https://github.com/zmughal/usc-sipi-image-database-backup/blob/master/misc.tar.gz?raw=true' ],
+			alt_urls => [ 'https://github.com/EntropyOrg-data/usc-sipi-image-database-backup/blob/master/misc.tar.gz?raw=true' ],
 		},
 	sequences => {
 			volume => 4,
@@ -60,7 +60,7 @@ Sequence 6.2 consists of 32 images but only the first 16 appear to be a true mot
 17 through 32 show some motion but not in any clear direction. They are included in the database only
 because they have been part of it for several years.},
 			url => 'http://sipi.usc.edu/database/sequences.tar.gz',
-			alt_urls => [ 'https://github.com/zmughal/usc-sipi-image-database-backup/blob/master/sequences.tar.gz?raw=true' ],
+			alt_urls => [ 'https://github.com/EntropyOrg-data/usc-sipi-image-database-backup/blob/master/sequences.tar.gz?raw=true' ],
 		},
 };
 
@@ -174,7 +174,7 @@ Data::TestImage::DB::USC::SIPI - provides access to the USC SIPI test image data
 
 =head1 VERSION
 
-version 0.006
+version 0.007
 
 =head1 SYNOPSIS
 
@@ -187,9 +187,9 @@ version 0.006
     say join " & ", map { $_->basename } @mandrill_images;
     # 4.2.03.tiff & 4.2.03.tiff
 
-Produces the L<mandrill|http://zmughal.github.io/p5-Data-TestImage/USC/SIPI/mandrill.png> image.
+Produces the L<mandrill|http://EntropyOrg.github.io/p5-Data-TestImage/USC/SIPI/mandrill.png> image.
 
-=for html <div><img width="200" alt="Mandrill image" src="http://zmughal.github.io/p5-Data-TestImage/USC/SIPI/mandrill.png"/></div>
+=for html <div><img width="200" alt="Mandrill image" src="http://EntropyOrg.github.io/p5-Data-TestImage/USC/SIPI/mandrill.png"/></div>
 
 =head1 INHERITANCE
 

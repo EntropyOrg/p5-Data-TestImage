@@ -1,6 +1,6 @@
 package Data::TestImage::DB::Other;
 # ABSTRACT: other test images
-$Data::TestImage::DB::Other::VERSION = '0.006';
+$Data::TestImage::DB::Other::VERSION = '0.007';
 use Data::TestImage;
 use parent qw(Data::TestImage::DB);
 
@@ -25,7 +25,7 @@ Data::TestImage::DB::Other - other test images
 
 =head1 VERSION
 
-version 0.006
+version 0.007
 
 =head1 SYNOPSIS
 
@@ -35,9 +35,9 @@ version 0.006
     say $camera_file->basename;
     # cameraman.tiff
 
-Produces the L<cameraman.tiff|http://zmughal.github.io/p5-Data-TestImage/Other/cameraman.png> image.
+Produces the L<cameraman.tiff|http://EntropyOrg.github.io/p5-Data-TestImage/Other/cameraman.png> image.
 
-=for html <div><img width="200" alt="Cameraman image" src="http://zmughal.github.io/p5-Data-TestImage/Other/cameraman.png"/></div>
+=for html <div><img width="200" alt="Cameraman image" src="http://EntropyOrg.github.io/p5-Data-TestImage/Other/cameraman.png"/></div>
 
 =head1 INHERITANCE
 
