@@ -39,21 +39,21 @@ gray levels which indicate which of the eight textures are present at each point
 mosaic. A document containing a more detailed description of the texture mosaics is available on the SIPI
 web site <http://sipi.usc.edu/database/USCTextureMosaics.pdf>.},
 			url => 'http://sipi.usc.edu/database/textures.tar.gz',
-			alt_urls => [ 'https://github.com/zmughal/usc-sipi-image-database-backup/blob/master/textures.tar.gz?raw=true' ],
+			alt_urls => [ 'https://github.com/EntropyOrg-data/usc-sipi-image-database-backup/blob/master/textures.tar.gz?raw=true' ],
 		},
 	aerials => {
 			volume => 2,
 			dir => 'aerials',
 			description => 'High altitude aerial images',
 			url => 'http://sipi.usc.edu/database/aerials.tar.gz',
-			alt_urls => [ 'https://github.com/zmughal/usc-sipi-image-database-backup/blob/master/aerials.tar.gz?raw=true' ],
+			alt_urls => [ 'https://github.com/EntropyOrg-data/usc-sipi-image-database-backup/blob/master/aerials.tar.gz?raw=true' ],
 		},
 	miscellaneous => {
 			volume => 3,
 			dir => 'misc',
 			description => 'Lena, the mandrill, and other favorites',
 			url => 'http://sipi.usc.edu/database/misc.tar.gz',
-			alt_urls => [ 'https://github.com/zmughal/usc-sipi-image-database-backup/blob/master/misc.tar.gz?raw=true' ],
+			alt_urls => [ 'https://github.com/EntropyOrg-data/usc-sipi-image-database-backup/blob/master/misc.tar.gz?raw=true' ],
 		},
 	sequences => {
 			volume => 4,
@@ -67,7 +67,7 @@ Sequence 6.2 consists of 32 images but only the first 16 appear to be a true mot
 17 through 32 show some motion but not in any clear direction. They are included in the database only
 because they have been part of it for several years.},
 			url => 'http://sipi.usc.edu/database/sequences.tar.gz',
-			alt_urls => [ 'https://github.com/zmughal/usc-sipi-image-database-backup/blob/master/sequences.tar.gz?raw=true' ],
+			alt_urls => [ 'https://github.com/EntropyOrg-data/usc-sipi-image-database-backup/blob/master/sequences.tar.gz?raw=true' ],
 		},
 };
 
